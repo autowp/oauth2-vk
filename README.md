@@ -23,7 +23,7 @@ The following versions of PHP are supported.
 To install, use composer:
 
 ```
-composer require league/oauth2-vk
+composer require autowp/oauth2-vk
 ```
 
 ## Usage
