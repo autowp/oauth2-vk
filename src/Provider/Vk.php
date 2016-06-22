@@ -57,16 +57,27 @@ class Vk extends AbstractProvider
      */
     protected $version;
 
+    /**
+     * @return string
+     */
     public function getBaseAuthorizationUrl()
     {
         return 'https://oauth.vk.com/authorize';
     }
 
+    /**
+     * @param array $params
+     * @return string
+     */
     public function getBaseAccessTokenUrl(array $params)
     {
         return 'https://oauth.vk.com/access_token';
     }
 
+    /**
+     * @param AccessToken $token
+     * @return string
+     */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
         $fields = array_merge($this->defaultUserFields, $this->userFields);
@@ -144,8 +155,15 @@ class Vk extends AbstractProvider
         return new VkUser($response['response'][0]);
     }
 
+    /**
+     * @param string $language
+     * @throws \InvalidArgumentException
+     */
     public function setLang($language)
     {
-        $this->_lang = $language ? $language : null;
+        if (!is_string($language) && !is_null($language)) {
+            throw new \InvalidArgumentException('Language must be string or null');
+        }
+        $this->lang = $language;
     }
 }
