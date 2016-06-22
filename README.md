@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/autowp/oauth2-vk.svg?branch=master)](https://travis-ci.org/autowp/oauth2-vk)
 [![Code Climate](https://codeclimate.com/github/autowp/oauth2-vk/badges/gpa.svg)](https://codeclimate.com/github/autowp/oauth2-vk)
 
 # VK Provider for OAuth 2.0 Client
